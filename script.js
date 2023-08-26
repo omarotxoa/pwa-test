@@ -16,13 +16,22 @@ if ("serviceWorker" in navigator) {
 
 let enableNotificationsButtons = document.querySelectorAll(".enable-notifications");
 
+function displayConfirmNotification() {
+    const bodyText = 'This is a test notification!';
+    const options = {
+        body: bodyText
+    };
+    new Notification("Successfully subscribed!", options);
+}
+
 function askForNotificationPermission() {
     Notification.requestPermission(function(result){
         console.log('User Choice', result);
         if (result !== 'granted') {
             console.log('No notification permission granted!');
         } else {
-            console.log('Notification permission granted!');  
+            console.log('Notification permission granted!');
+            displayConfirmNotification();  
         }
     });
 }
