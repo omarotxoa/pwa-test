@@ -6,3 +6,7 @@ body {
 img {
     display: inline-block;
 }
+
+.enable-notifications {
+    display: none;
+}

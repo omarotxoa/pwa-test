@@ -1,5 +1,5 @@
 const apiRoot = 'https://omarochoa.com/wp-json';
-const articleContainer = document.querySelector('main#main');
+const articleContainer = document.querySelector('#posts');
 const listPosts = {};
 
 console.log('wp-posts.js loaded');
