@@ -17,6 +17,12 @@ if ("serviceWorker" in navigator) {
 let enableNotificationsButtons = document.querySelectorAll(".enable-notifications");
 
 function displayConfirmNotification() {
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then(function(ServiceWorkerRegistration){
+            ServiceWorkerRegistration.showNotification('notification from sw');
+        });
+    }
+    
     const bodyText = 'This is a test notification!';
     const options = {
         body: bodyText
